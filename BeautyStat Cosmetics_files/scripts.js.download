@@ -1,0 +1,36 @@
+// LAZY LOADER
+// Lazy loads all images on page with proper markup.
+// We should do this on everything we make.
+// I recommend loading all images above the fold normally
+// Only lazy load stuff below the fold.
+// Use the folowing syntax on all <img> tags you wish to lazy load:
+// <img src="loaderOrLowResImage.jpg" data-src="imageYouWantToLoad.jpg" />
+window.addEventListener('load', function(){
+    var allimages= document.getElementsByTagName('img');
+    for (var i=0; i<allimages.length; i++) {
+        if (allimages[i].getAttribute('data-src')) {
+            allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+        }
+    }
+}, false);
+
+// WAYPOINTS
+// Uncomment this code block if you would like to use waypoints in your page.
+// SEE HERE FOR USAGE DETAILS: http://imakewebthings.com/waypoints/guides/jquery-zepto/
+// ********************************************************
+// $.getScript('./assets/js/lib/waypoints.js', function() {
+//     // WAYPOINT CODE HERE
+// });
+
+// GLIDE CAROUSEL
+// Uncomment this code block if you would like to use a carousel in your page.
+// SEE HERE FOR USAGE DETAILS: https://glidejs.com/docs/
+// ********************************************************
+// $.getScript('./assets/js/lib/glide.js', function() {
+//     // WAYPOINT CODE HERE
+// });
+
+$(document).ready(function () {
+    $('.fancybox').fancybox();
+		 
+});
